@@ -37,7 +37,17 @@
 }
 
 -(void)sssss{
+    UIButton*btn=[UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame=CGRectMake(100, 200, 150, 35);
+    [btn setImage:[UIImage imageNamed:@"nn"] forState:UIControlStateNormal];
+    [btn setBackgroundColor:[UIColor blueColor]];
+    [btn setTitle:@"发送本地通知" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btn.titleLabel.font=[UIFont systemFontOfSize:15];
+    [btn addTarget:self action:@selector(buttonActionClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
     
+  
     //select   update  delete   insert  alter 更改  drop  落下
     
    // select name from tablename where age>10;
@@ -73,6 +83,10 @@
      
      creat table if not exists t_student ('ID' INTEGER PRIMARY KEY AUTOINCREMENT ,'name' TEXT NOT NULL,'phone'  TEXT NOT NULL,'scort' INTEGER NOT NULL)
      **/
+}
+
+-(void)buttonActionClick{
+    
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
